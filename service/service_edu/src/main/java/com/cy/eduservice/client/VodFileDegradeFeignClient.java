@@ -18,8 +18,4 @@ public class VodFileDegradeFeignClient implements VodClient{
         return R.error().message("time out");
     }
 
-    @Override
-    public UcenterMemberOrder getUcenterPay(String memberId) {
-        return null;
-    }
 }

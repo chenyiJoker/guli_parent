@@ -17,7 +17,4 @@ public interface VodClient {
     @DeleteMapping(value = "/eduvod/video")
     public R deleteByIds(@RequestParam("videoList") List<String> videoList);
 
-    //根据用户id获取用户信息
-    @GetMapping("/educenter/member/{memberId}")
-    public UcenterMemberOrder getUcenterPay(@PathVariable("memberId") String memberId);
 }

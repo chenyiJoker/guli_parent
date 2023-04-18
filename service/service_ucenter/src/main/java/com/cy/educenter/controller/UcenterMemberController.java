@@ -23,12 +23,13 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping("/educenter/member")
-@CrossOrigin
+//@CrossOrigin
 public class UcenterMemberController {
 
     @Autowired
     private UcenterMemberService memberService;
-    @PostMapping ("login")
+
+    @PostMapping("login")
     public R login(@RequestBody UcenterMember ucenterMember) {
         String token = memberService.login(ucenterMember);
         return R.ok().data("token", token);
@@ -50,12 +51,12 @@ public class UcenterMemberController {
 
     // 根据token字符串获取用户信息
     @PostMapping("{id}")
-    public UcenterMemberOrder getInfo (@PathVariable String id) {
+    public UcenterMemberOrder getInfo(@PathVariable String id) {
         // 根据用户id获取用户信息
         UcenterMember ucenterMember = memberService.getById(id);
         UcenterMemberOrder member = new UcenterMemberOrder();
 
-        BeanUtils.copyProperties(ucenterMember,member);
+        BeanUtils.copyProperties(ucenterMember, member);
         return member;
     }
 

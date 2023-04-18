@@ -59,6 +59,12 @@ public class UserController {
         return R.ok().data("items", pageModel.getRecords()).data("total", pageModel.getTotal());
     }
 
+    @GetMapping("get/{id}")
+    public R getById(@PathVariable String id) {
+
+        return R.ok().data("item", userService.getById(id));
+    }
+
     @ApiOperation(value = "新增管理用户")
     @PostMapping("save")
     public R save(@RequestBody User user) {

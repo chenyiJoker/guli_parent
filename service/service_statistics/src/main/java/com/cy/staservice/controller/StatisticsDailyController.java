@@ -18,7 +18,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/staservice/sta")
-@CrossOrigin
+//@CrossOrigin
 public class StatisticsDailyController {
     @Autowired
     private StatisticsDailyService dailyService;
@@ -33,6 +33,5 @@ public class StatisticsDailyController {
         Map<String, Object> map = dailyService.getChartData(begin, end, type);
         return R.ok().data(map);
     }
-
 }
 

@@ -5,9 +5,11 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cy.commonutils.JwtUtils;
 import com.cy.commonutils.R;
 import com.cy.commonutils.vo.UcenterMemberOrder;
+import com.cy.eduservice.client.UcenterClient;
 import com.cy.eduservice.client.VodClient;
 import com.cy.eduservice.entity.EduComment;
 import com.cy.eduservice.service.EduCommentService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.util.StringUtils;
@@ -26,14 +28,14 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/eduservice/comment")
-@CrossOrigin
+//@CrossOrigin
 public class EduCommentController {
+
+    @Autowired
+    private UcenterClient ucenterClient;
     @Autowired
     private EduCommentService commentService;
 
-    @Qualifier("com.cy.eduservice.client.VodClient")
-    @Autowired
-    private VodClient vodClient;
 
     @GetMapping ("{page}/{limit}")
     public R getById(@PathVariable long page, @PathVariable long limit, String courseId) {
@@ -51,7 +53,7 @@ public class EduCommentController {
         }
         eduComment.setMemberId(memberId);
 
-        UcenterMemberOrder ucenterInfo = vodClient.getUcenterPay(memberId);
+        UcenterMemberOrder ucenterInfo = ucenterClient.getInfo(memberId);
 
         eduComment.setNickname(ucenterInfo.getNickname());
         eduComment.setAvatar(ucenterInfo.getAvatar());

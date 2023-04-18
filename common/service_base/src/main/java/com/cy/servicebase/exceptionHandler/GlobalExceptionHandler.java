@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * 统一异常处理类
  */
 @ControllerAdvice
-public class GlobalExceptionHandler1 {
+public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     @ResponseBody // 为了返回数据
