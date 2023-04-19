@@ -42,7 +42,7 @@ public class TestVod {
 
 
     public static void getPlayAuth() throws Exception {
-        DefaultAcsClient client = initVodClient("LTAI5t6zwEgVLeGYcdJRgPr8", "BCDFeSBzrDiCzKTTHbGYbVpslG0PGV");
+        DefaultAcsClient client = initVodClient("keyid", "keysecret");
 
         GetVideoPlayAuthRequest request = new GetVideoPlayAuthRequest();
         GetVideoPlayAuthResponse response = new GetVideoPlayAuthResponse();

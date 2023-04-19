@@ -22,7 +22,7 @@ public class MsmServiceImpl implements MsmService {
         }
 
         DefaultProfile profile =
-                DefaultProfile.getProfile("default", "LTAI5t6zwEgVLeGYcdJRgPr8", "BCDFeSBzrDiCzKTTHbGYbVpslG0PGV");
+                DefaultProfile.getProfile("default", "keyid", "keysecret");
         IAcsClient client = new DefaultAcsClient(profile);
 
         CommonRequest request = new CommonRequest();
