@@ -14,8 +14,8 @@ import static com.cy.vodtest.IninObject.initVodClient;
 
 public class TestVod {
     public static void main(String[] args) throws Exception {
-//        String accessKeyId = "LTAI5t6zwEgVLeGYcdJRgPr8";
-//        String accessKeySecret = "BCDFeSBzrDiCzKTTHbGYbVpslG0PGV";
+//        String accessKeyId = "keyid";
+//        String accessKeySecret = "keysecret";
 //        String title = "6 - What If I Want to Move Faster- upload by sdk";
 //        String fileName = "D:/6 - What If I Want to Move Faster.mp4";
 //        UploadVideoRequest request = new UploadVideoRequest(accessKeyId, accessKeySecret, title, fileName);
