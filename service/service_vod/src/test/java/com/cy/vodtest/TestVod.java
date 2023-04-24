@@ -56,7 +56,7 @@ public class TestVod {
     }
 
     public static void getPlayUrl() throws Exception {
-        DefaultAcsClient client = initVodClient("LTAI5t6zwEgVLeGYcdJRgPr8", "BCDFeSBzrDiCzKTTHbGYbVpslG0PGV");
+        DefaultAcsClient client = initVodClient("keyid", "keysecret");
         GetPlayInfoResponse response = new GetPlayInfoResponse();
         GetPlayInfoRequest request = new GetPlayInfoRequest();
 
